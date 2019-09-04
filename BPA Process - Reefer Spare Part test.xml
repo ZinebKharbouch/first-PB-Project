@@ -1,7 +1,7 @@
 ﻿<process name="Reefer Spare Part test" version="1.0" bpversion="6.2.1.4272" narrative="C:\Users\zkharbou\Desktop\Tareas\TMK\SuppliersMapping.xlsx&#xD;&#xA;&#xD;&#xA;C:\Users\zkharbou\Desktop\Tareas\Hapag Llyod\PDD\KITS ON BOARD - RPA test.xlsx" byrefcollection="true" preferredid="1f6daefe-7705-4451-a061-8babc9cd5555">
   <view>
     <camerax>0</camerax>
-    <cameray>136</cameray>
+    <cameray>-11</cameray>
     <zoom version="2">1.25</zoom>
   </view>
   <preconditions />
@@ -31,245 +31,16 @@
     <displaywidth>60</displaywidth>
     <displayheight>30</displayheight>
     <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <onsuccess>c8e56e75-20d4-4625-8d0c-a6ae9b83abf4</onsuccess>
+    <onsuccess>1468f30f-18bc-433a-b9ee-33d47d5a1838</onsuccess>
   </stage>
   <stage stageid="844f47d8-0496-40ea-b8d9-bb7ebf43440e" name="End" type="End">
     <narrative>
     </narrative>
     <displayx>15</displayx>
-    <displayy>345</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-  </stage>
-  <stage stageid="c8e56e75-20d4-4625-8d0c-a6ae9b83abf4" name="open Excel" type="Action">
-    <narrative>
-    </narrative>
-    <displayx>15</displayx>
-    <displayy>-45</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <inputs>
-      <input type="text" name="excelFileNameFullPath" expr="[excelFilePath]" />
-    </inputs>
-    <outputs>
-      <output type="number" name="connectionId" stage="connectionId" />
-    </outputs>
-    <onsuccess>81198752-29be-43d4-8561-b08df8593c97</onsuccess>
-    <resource object="UtilityDB" action="openExcel" />
-  </stage>
-  <stage stageid="6fa9be83-a778-4a9c-b804-9a880d4b52c6" name="connectionId" type="Data">
-    <narrative>
-    </narrative>
-    <displayx>-150</displayx>
-    <displayy>-15</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <datatype>number</datatype>
-    <initialvalue />
-    <private />
-    <alwaysinit />
-  </stage>
-  <stage stageid="21a3e638-56fb-4318-8d0f-5b82693e1cf7" name="excelFilePath" type="Data">
-    <narrative>
-    </narrative>
-    <displayx>-225</displayx>
-    <displayy>30</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <datatype>text</datatype>
-    <initialvalue xml:space="preserve">C:\Users\zkharbou\Desktop\Tareas\Hapag Llyod\Refeer Spare Parts - Kits Handling\KITS ON BOARD - RPA test1.xlsx</initialvalue>
-    <private />
-    <alwaysinit />
-  </stage>
-  <stage stageid="86e367c3-fcfd-487a-876d-bcde3a2655fc" name="Action1" type="Action">
-    <narrative>
-    </narrative>
-    <displayx>15</displayx>
     <displayy>75</displayy>
     <displaywidth>60</displaywidth>
     <displayheight>30</displayheight>
     <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <inputs>
-      <input type="number" name="connectionId" expr="[connectionId]" />
-      <input type="text" name="query" expr="[query]" />
-    </inputs>
-    <outputs>
-      <output type="number" name="readerId" stage="readerId" />
-    </outputs>
-    <onsuccess>1e2d2225-237c-4199-b267-d2e246b7b22c</onsuccess>
-    <resource object="UtilityDB" action="select" />
-  </stage>
-  <stage stageid="9d466e12-7523-4137-a515-f5caa8c274f4" name="query" type="Data">
-    <narrative>
-    </narrative>
-    <displayx>-195</displayx>
-    <displayy>75</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <datatype>text</datatype>
-    <initialvalue />
-    <private />
-    <alwaysinit />
-  </stage>
-  <stage stageid="f3d3cbc6-2850-44e1-8861-66e92941f969" name="readerId" type="Data">
-    <narrative>
-    </narrative>
-    <displayx>-150</displayx>
-    <displayy>30</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <datatype>number</datatype>
-    <initialvalue />
-    <private />
-    <alwaysinit />
-  </stage>
-  <stage stageid="de756b1d-de72-4d4a-b140-2475001ded23" name="Set Query" type="Calculation">
-    <narrative>
-    </narrative>
-    <displayx>105</displayx>
-    <displayy>15</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <onsuccess>86e367c3-fcfd-487a-876d-bcde3a2655fc</onsuccess>
-    <calculation expression="&quot;SELECT * &#xA;FROM [Sheet1$A:Y] &#xA;WHERE [TO DO] ='Deliver'&#xA;AND [Port] = 'SGSIN'&quot;&#xA;" stage="query" />
-  </stage>
-  <stage stageid="ab2c4c51-ea08-4115-810b-d23f2adc4aef" name="close" type="Action">
-    <narrative>
-    </narrative>
-    <displayx>15</displayx>
-    <displayy>285</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <inputs>
-      <input type="number" name="connectionId" expr="[connectionId]" />
-    </inputs>
-    <onsuccess>844f47d8-0496-40ea-b8d9-bb7ebf43440e</onsuccess>
-    <resource object="UtilityDB" action="close" />
-  </stage>
-  <stage stageid="1e2d2225-237c-4199-b267-d2e246b7b22c" name="Action1" type="Action">
-    <narrative>
-    </narrative>
-    <displayx>15</displayx>
-    <displayy>135</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <inputs>
-      <input type="number" name="readerId" expr="[readerId]" />
-    </inputs>
-    <outputs>
-      <output type="collection" name="row" stage="row" />
-      <output type="flag" name="isFinished" stage="isFinished" />
-    </outputs>
-    <onsuccess>d4991ca1-9f30-4483-851f-ea03d60b1d87</onsuccess>
-    <resource object="UtilityDB" action="getRow" />
-  </stage>
-  <stage stageid="baa6ac41-8734-4fc9-ab86-5ec3752957a1" name="row" type="Collection">
-    <narrative>
-    </narrative>
-    <displayx>-210</displayx>
-    <displayy>135</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <datatype>collection</datatype>
-    <private />
-    <alwaysinit />
-  </stage>
-  <stage stageid="628fd7e0-a6b3-44fd-b9fa-53ae16b6afac" name="isFinished" type="Data">
-    <narrative>
-    </narrative>
-    <displayx>-120</displayx>
-    <displayy>135</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <datatype>flag</datatype>
-    <initialvalue />
-    <private />
-    <alwaysinit />
-  </stage>
-  <stage stageid="9f40d095-98b9-4c12-a00e-ff2c72521483" name="Action1" type="Action">
-    <narrative>
-    </narrative>
-    <displayx>135</displayx>
-    <displayy>75</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <inputs>
-      <input type="number" name="connectionId" expr="[connectionId]" />
-      <input type="text" name="query" expr="[query]" />
-    </inputs>
-    <outputs>
-      <output type="number" name="affectedRows" stage="affectedRows" />
-    </outputs>
-    <onsuccess>1e2d2225-237c-4199-b267-d2e246b7b22c</onsuccess>
-    <resource object="UtilityDB" action="executeWritingQuery" />
-  </stage>
-  <stage stageid="a3c3ce21-3428-4b0c-b5b0-a3327a827746" name="affectedRows" type="Data">
-    <narrative>
-    </narrative>
-    <displayx>210</displayx>
-    <displayy>75</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <datatype>number</datatype>
-    <initialvalue />
-    <private />
-    <alwaysinit />
-  </stage>
-  <stage stageid="d4991ca1-9f30-4483-851f-ea03d60b1d87" name="Decision1" type="Decision">
-    <narrative>
-    </narrative>
-    <displayx>15</displayx>
-    <displayy>195</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <decision expression="[isFinished] = True" />
-    <ontrue>ab2c4c51-ea08-4115-810b-d23f2adc4aef</ontrue>
-    <onfalse>c9533e8e-06ab-4111-a9bb-613c4c55dfe6</onfalse>
-  </stage>
-  <stage stageid="c9533e8e-06ab-4111-a9bb-613c4c55dfe6" name="Anchor101" type="Anchor">
-    <narrative>
-    </narrative>
-    <displayx>120</displayx>
-    <displayy>195</displayy>
-    <displaywidth>10</displaywidth>
-    <displayheight>10</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <onsuccess>0de84c55-6909-4ce2-ac94-64c5f102db7c</onsuccess>
-  </stage>
-  <stage stageid="0de84c55-6909-4ce2-ac94-64c5f102db7c" name="Anchor103" type="Anchor">
-    <narrative>
-    </narrative>
-    <displayx>120</displayx>
-    <displayy>135</displayy>
-    <displaywidth>10</displaywidth>
-    <displayheight>10</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <onsuccess>1e2d2225-237c-4199-b267-d2e246b7b22c</onsuccess>
-  </stage>
-  <stage stageid="81198752-29be-43d4-8561-b08df8593c97" name="Set Query" type="Calculation">
-    <narrative>
-    </narrative>
-    <displayx>15</displayx>
-    <displayy>15</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <onsuccess>86e367c3-fcfd-487a-876d-bcde3a2655fc</onsuccess>
-    <calculation expression="&quot;SELECT * &#xA;FROM [Sheet1$A:Y] &#xA;WHERE [TO DO] ='Deliver'&#xA;AND [Port] = 'SGSIN'&#xA;AND [F4] = 'HLC'&quot;&#xA;" stage="query" />
   </stage>
   <stage stageid="db481b93-4552-4f0d-8fb5-e2855c5e91fa" name="Page 1" type="SubSheetInfo">
     <subsheetid>94684ad8-3cfb-48b9-a8ef-cbf8ca720bdb</subsheetid>
@@ -548,20 +319,6 @@
     <private />
     <alwaysinit />
   </stage>
-  <stage stageid="e3f97752-4f7a-4b67-b151-58c5e5df7e46" name="Add Rows" type="Action">
-    <subsheetid>94684ad8-3cfb-48b9-a8ef-cbf8ca720bdb</subsheetid>
-    <narrative>
-    </narrative>
-    <displayx>315</displayx>
-    <displayy>225</displayy>
-    <displaywidth>60</displaywidth>
-    <displayheight>30</displayheight>
-    <font family="Segoe UI" size="10" style="Regular" color="000000" />
-    <inputs>
-      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;data&quot;" />
-    </inputs>
-    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Add Row" />
-  </stage>
   <stage stageid="35abef87-e473-4c29-9b15-dbe0845c04ee" name="Action3" type="Action">
     <subsheetid>94684ad8-3cfb-48b9-a8ef-cbf8ca720bdb</subsheetid>
     <narrative>
@@ -593,5 +350,25 @@
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
+  </stage>
+  <stage stageid="c13c600f-76f2-440b-8ef6-1949915c58d7" name="Block1" type="Block">
+    <narrative>
+    </narrative>
+    <displayx>-255</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>105</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="1468f30f-18bc-433a-b9ee-33d47d5a1838" name="Page 1" type="SubSheet">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>844f47d8-0496-40ea-b8d9-bb7ebf43440e</onsuccess>
+    <processid>94684ad8-3cfb-48b9-a8ef-cbf8ca720bdb</processid>
   </stage>
 </process>
